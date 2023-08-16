@@ -338,7 +338,7 @@ public class UserResource {
 									message.setContent(
 											"You have successfully registered to the OpenSeaMap Depth Project.\n\nYour username is "
 													+ username
-													+ ".\n\nPlease regard the upload instructions http://depth.openseamap.org/#instructions and create a vessel configuration http://depth.openseamap.org/#vessels\n\nThis is a generated email. Do NOT reply to this email.\n\nThe OpenSeaMap Team",
+													+ ".\n\nPlease regard the upload instructions http://depth.openseamap.eu/#instructions and create a vessel configuration http://depth.openseamap.eu/#vessels\n\nThis is a generated email. Do NOT reply to this email.\n\nThe OpenSeaMap Team",
 											"text/plain");
 									Transport.send(message);
 

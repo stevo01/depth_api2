@@ -8,7 +8,7 @@ public interface TestConstants {
 
 	String TESTPASSWORD = "x"; //$NON-NLS-1$
 
-//	String HOST = "http://testdepth.openseamap.org:8080";
+//	String HOST = "http://testdepth.openseamap.eu";
 	
 	String PATH = "org.osm.depth.upload.test"; //$NON-NLS-1$
 

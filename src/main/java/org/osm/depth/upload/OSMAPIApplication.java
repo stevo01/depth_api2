@@ -54,7 +54,7 @@ public class OSMAPIApplication extends Application {
         BeanConfig beanConfig = new BeanConfig();
         beanConfig.setVersion("2.0.0");
         beanConfig.setSchemes(new String[]{"http"});
-        beanConfig.setHost("depth.openseamap.org:8080");
+        beanConfig.setHost("depth.openseamap.eu");
         beanConfig.setBasePath("/org.osm.depth.upload/api2");
         beanConfig.setResourcePackage(TideResource.class.getPackage().getName());
         beanConfig.setScan(true);	}
