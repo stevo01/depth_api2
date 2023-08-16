@@ -44,9 +44,29 @@
    userRoleTable="userroles" roleNameCol="role" localDataSource="true" digest="SHA"/>
    
    
-		  <Resource name="mail/Session" auth="Container"
+		  <!--Resource name="mail/Session" auth="Container"
             type="javax.mail.Session"
-            mail.smtp.host="rachael.franken.de"/>
+            mail.smtp.host="rachael.franken.de"/-->
+
+    	<Resource name="mail/Session"  auth="Container" type="javax.mail.Session"
+                mail.transport.protocol="smtp"
+                mail.smtp.auth="true"
+                mail.smtp.host="${mailserver}"
+                mail.smtp.port="465"
+                mail.smtp.user="${mailname}"
+                password="${mailpass}"
+                mail.smtp.from="${mailname}"
+                mail.smtp.quitwait="false"
+                mail.smtp.starttls.enable="false"
+                mail.smtp.ssl.enable="true"
+                mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
+                mail.debug="true"
+                description="Global E-Mail Resource"
+      />
+
       </Realm>
+
+
+
             
 </Context>
