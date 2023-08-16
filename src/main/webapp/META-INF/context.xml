@@ -23,15 +23,27 @@
           type="javax.sql.DataSource" username="${osmuser}" password="${osmpass}" 
             driverClassName="org.postgresql.Driver" url="jdbc:postgresql:/${osmdatabase}" maxActive="150"
             maxIdle="1"/>
+
             
         <Resource auth="Container" name="jdbc/depth" 
           type="javax.sql.DataSource" username="${osmuser}" password="${osmpass}" 
             driverClassName="org.postgresql.Driver" url="jdbc:postgresql:/${depthdatabase}" maxActive="150"
             maxIdle="1"/>
 
-    	<Resource name="mail/Session" auth="Container"
-		            type="javax.mail.Session"
-		            mail.smtp.host="${mailserver}"/>
+    	<Resource name="mail/Session"  auth="Container" type="javax.mail.Session"
+                mail.transport.protocol="smtp"
+                mail.smtp.auth="true"
+                mail.smtp.host="${mailserver}"
+                mail.smtp.port="465"
+                mail.smtp.user="${mailname}"
+                password="${mailpass}"
+                mail.smtp.from="${mailname}"
+                mail.smtp.quitwait="false"
+                mail.smtp.starttls.enable="false"
+                mail.smtp.ssl.enable="true"
+                mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
+                mail.debug="true"
+                description="Global E-Mail Resource"/>
       
                 <Realm className="org.apache.catalina.realm.LockOutRealm">
         <!-- This Realm uses the UserDatabase configured in the global JNDI
@@ -47,22 +59,6 @@
 		  <!--Resource name="mail/Session" auth="Container"
             type="javax.mail.Session"
             mail.smtp.host="rachael.franken.de"/-->
-
-    	<Resource name="mail/Session"  auth="Container" type="javax.mail.Session"
-                mail.transport.protocol="smtp"
-                mail.smtp.auth="true"
-                mail.smtp.host="${mailserver}"
-                mail.smtp.port="465"
-                mail.smtp.user="${mailname}"
-                password="${mailpass}"
-                mail.smtp.from="${mailname}"
-                mail.smtp.quitwait="false"
-                mail.smtp.starttls.enable="false"
-                mail.smtp.ssl.enable="true"
-                mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
-                mail.debug="true"
-                description="Global E-Mail Resource"
-      />
 
       </Realm>
 
