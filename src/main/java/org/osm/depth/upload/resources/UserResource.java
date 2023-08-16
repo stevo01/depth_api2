@@ -193,7 +193,7 @@ public class UserResource {
 									Session session = (Session) envCtx.lookup("mail/Session");
 
 									Message message = new MimeMessage(session);
-									message.setFrom(new InternetAddress("openseamap-depth@rachael.franken.de"));
+									message.setFrom(new InternetAddress("admin-depth@openseamap.eu"));
 									InternetAddress to[] = new InternetAddress[1];
 									to[0] = new InternetAddress(email);
 									message.setRecipients(Message.RecipientType.TO, to);
@@ -330,7 +330,7 @@ public class UserResource {
 									Session session = (Session) envCtx.lookup("mail/Session");
 
 									Message message = new MimeMessage(session);
-									message.setFrom(new InternetAddress("openseamap-depth@rachael.franken.de"));
+									message.setFrom(new InternetAddress("admin-depth@openseamap.eu"));
 									InternetAddress to[] = new InternetAddress[1];
 									to[0] = new InternetAddress(username);
 									message.setRecipients(Message.RecipientType.TO, to);
@@ -434,7 +434,7 @@ public class UserResource {
 
 							List<String> emails = new ArrayList<>(10);
 							Message message = new MimeMessage(session);
-							message.setFrom(new InternetAddress("openseamap-depth@rachael.franken.de"));
+							message.setFrom(new InternetAddress("admin-depth@openseamap.eu"));
 							try(ResultSet emailResultSet = emailStatement.executeQuery()) {
 								while(emailResultSet.next()) {
 									emails.add(emailResultSet.getString(1));
